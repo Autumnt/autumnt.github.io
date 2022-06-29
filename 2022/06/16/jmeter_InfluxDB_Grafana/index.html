@@ -5,7 +5,7 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://example.com">
+  <link rel="dns-prefetch" href="https://autumnt.github.io">
   <title>Jmeter+InfluxDB+Grafana 搭建可视化性能测试监控平台（Windows） | 炎炎夏日，有你超甜~ (*´∇｀*)</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,35 +13,35 @@
   <meta name="description" content="先来简单介绍一下：Jmeter、InfluxDB及Grafana的作用：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jmeter+InfluxDB+Grafana 搭建可视化性能测试监控平台（Windows）">
-<meta property="og:url" content="http://example.com/2022/06/16/jmeter_InfluxDB_Grafana/index.html">
+<meta property="og:url" content="https://autumnt.github.io/2022/06/16/jmeter_InfluxDB_Grafana/index.html">
 <meta property="og:site_name" content="炎炎夏日，有你超甜~ (*´∇｀*)">
 <meta property="og:description" content="先来简单介绍一下：Jmeter、InfluxDB及Grafana的作用：">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Jmeter_InfluxDB_Grafana.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_download.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_bin.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_cmd.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_view.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/InfluxDB_download.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/InfluxDB_cmd.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/InfluxDB_login.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/InfluxDB_view.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Jmeter_download.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Java_download.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_config.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_config_InfluxDB.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_config_InfluxDB_host.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_config_InfluxDB_Jmeter.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_config_InfluxDB_save.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/InfluxDB_token.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/InfluxDB_copy.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_InfluxDB_Jmeter_view.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_InfluxDB_Jmeter_view_json.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_import.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_InfluxDB.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/jmeter-influxdb2_jar.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Jmeter_config.png">
-<meta property="og:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Grafana_config_InfluxDB_display.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Jmeter_InfluxDB_Grafana.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_download.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_bin.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_cmd.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_view.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/InfluxDB_download.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/InfluxDB_cmd.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/InfluxDB_login.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/InfluxDB_view.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Jmeter_download.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Java_download.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_config.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_config_InfluxDB.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_config_InfluxDB_host.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_config_InfluxDB_Jmeter.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_config_InfluxDB_save.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/InfluxDB_token.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/InfluxDB_copy.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_InfluxDB_Jmeter_view.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_InfluxDB_Jmeter_view_json.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_import.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_InfluxDB.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/jmeter-influxdb2_jar.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Jmeter_config.png">
+<meta property="og:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Grafana_config_InfluxDB_display.png">
 <meta property="article:published_time" content="2022-06-16T09:30:30.000Z">
 <meta property="article:modified_time" content="2022-06-28T03:16:51.767Z">
 <meta property="article:author" content="Autumn">
@@ -50,7 +50,7 @@
 <meta property="article:tag" content="GRAFANA">
 <meta property="article:tag" content="WINDOWS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/image/Jmeter_InfluxDB_Grafana/Jmeter_InfluxDB_Grafana.png">
+<meta name="twitter:image" content="https://autumnt.github.io/image/Jmeter_InfluxDB_Grafana/Jmeter_InfluxDB_Grafana.png">
   
     <link rel="alternative" href="/atom.xml" title="炎炎夏日，有你超甜~ (*´∇｀*)" type="application/atom+xml">
   
@@ -433,7 +433,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018-2022 <a href="http://example.com/" target="_blank">Autumn</a>
+    		&copy; 2018-2022 <a href="https://autumnt.github.io/" target="_blank">Autumn</a>
     	</div>
       	<div class="footer-right">
 			
@@ -547,15 +547,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LINUX</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MYSQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">MYSQL_EXPORTOR</a>
+                <a href="javascript:void(0)" class="js-tag color4">NODE_EXPORTER</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,7 +559,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NODE_EXPORTER</a>
+                <a href="javascript:void(0)" class="js-tag color1">LINUX</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,15 +571,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MYSQL_EXPORTOR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">CURL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CURL</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
