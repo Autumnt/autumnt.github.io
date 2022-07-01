@@ -29,9 +29,19 @@
 <meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Prometheus_cmd.png">
 <meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Prometheus_target.png">
 <meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Prometheus_up.png">
+<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Prometheus_bat.png">
 <meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Prometheus_ini.png">
 <meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Prometheus_restart.png">
-<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Prometheus_bat.png">
+<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Grafana_Dashboard_mysql.png">
+<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Grafana_login.png">
+<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Grafana_add_source.png">
+<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Grafana_choice_source.png">
+<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Grafana_edit_source.png">
+<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Grafana_save_source.png">
+<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Grafana_DashBoard.png">
+<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Grafana_Dashboard_mysql_load.png">
+<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Grafana_DashBoard_import.png">
+<meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/mysql_exportor_Prometheus_Grafana_view.png">
 <meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/mysql_exportor_msi.png">
 <meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/mysql_exportor_metrics.png">
 <meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Prometheus_reini.png">
@@ -47,7 +57,7 @@
 <meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/Grafana_DashBoard_import.png">
 <meta property="og:image" content="https://autumnt.github.io/image/mysql_exportor_Prometheus_Grafana/mysql_exportor_Prometheus_Grafana_display.png">
 <meta property="article:published_time" content="2022-06-29T06:39:30.000Z">
-<meta property="article:modified_time" content="2022-06-29T06:57:21.943Z">
+<meta property="article:modified_time" content="2022-07-01T01:51:42.800Z">
 <meta property="article:author" content="Autumn">
 <meta property="article:tag" content="GRAFANA">
 <meta property="article:tag" content="WINDOWS">
@@ -301,31 +311,21 @@
 <li><h4 id="验证访问：-1"><a href="#验证访问：-1" class="headerlink" title="验证访问："></a>验证访问：</h4><p>默认端口为<code>9090</code>，访问：<code>http://localhost:9090/</code>。出现以下页面说明启动成功：</p>
 <p><img src="/../image/mysql_exportor_Prometheus_Grafana/Prometheus_target.png" alt="img"></p>
 <p><img src="/../image/mysql_exportor_Prometheus_Grafana/Prometheus_up.png" alt="img"></p>
-</li>
-<li><h4 id="修改配置文件："><a href="#修改配置文件：" class="headerlink" title="修改配置文件："></a>修改配置文件：</h4><p>修改<code>prometheus.yml</code>文件，用于存储<code>mysqld_exporter</code>收集到的信息，<code>mysqld_exporter</code>的默认端口是<code>9104</code>，所以配置文件中的端口是<code>9104</code>。</p>
-<p><code>localhost:9104</code>是收集的本地<code>mysqld_exporter</code>的信息。</p>
-<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Prometheus_ini.png" alt="img"></p>
-</li>
-<li><h4 id="重启Prometheus服务："><a href="#重启Prometheus服务：" class="headerlink" title="重启Prometheus服务："></a>重启Prometheus服务：</h4><p>重启<code>Prometheus</code>，再次打开访问：<code>http://localhost:9090/targets</code>，才能看到如下图：</p>
-<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Prometheus_restart.png" alt="img"></p>
 <p>为方便每次启动<code>mysqld_exporter</code>，可以建一个<code>.bat</code>文件，文件内容如下：</p>
 <p><img src="/../image/mysql_exportor_Prometheus_Grafana/Prometheus_bat.png" alt="img"></p>
 </li>
 </ul>
 </li>
 <li><h3 id="grafana监控mysql-exportor："><a href="#grafana监控mysql-exportor：" class="headerlink" title="grafana监控mysql_exportor："></a><code>grafana</code>监控<code>mysql_exportor</code>：</h3><ul>
-<li><h4 id="运行windows-exporter的msi文件："><a href="#运行windows-exporter的msi文件：" class="headerlink" title="运行windows_exporter的msi文件："></a>运行<code>windows_exporter</code>的<code>msi</code>文件：</h4><p><a target="_blank" rel="noopener" href="https://github.com/prometheus-community/windows_exporter/releases"><code>windows_exporter.msi</code> 下载戳这里</a>。</p>
-<p><img src="/../image/mysql_exportor_Prometheus_Grafana/mysql_exportor_msi.png" alt="img"></p>
-<p>下载完成后直接运行，访问地址：<code>http://localhost:9182/metrics</code>，就可以看到采集的数据了：</p>
-<p><img src="/../image/mysql_exportor_Prometheus_Grafana/mysql_exportor_metrics.png" alt="img"></p>
+<li><h4 id="修改配置文件："><a href="#修改配置文件：" class="headerlink" title="修改配置文件："></a>修改配置文件：</h4><p>修改<code>prometheus.yml</code>文件，用于存储<code>mysqld_exporter</code>收集到的信息，<code>mysqld_exporter</code>的默认端口是<code>9104</code>，所以配置文件中的端口是<code>9104</code>。</p>
+<p><code>localhost:9104</code>是收集的本地<code>mysqld_exporter</code>的信息。</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Prometheus_ini.png" alt="img"></p>
 </li>
-<li><h3 id="windows-exporter添加到prometheus："><a href="#windows-exporter添加到prometheus：" class="headerlink" title="windows_exporter添加到prometheus："></a><code>windows_exporter</code>添加到<code>prometheus</code>：</h3><p>修改<code>prometheus.yml</code>文件：</p>
-<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Prometheus_reini.png" alt="img"></p>
-<p>出现如下图就代表成功了：</p>
-<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Prometheus_reup.png" alt="img"></p>
+<li><h4 id="重启Prometheus服务："><a href="#重启Prometheus服务：" class="headerlink" title="重启Prometheus服务："></a>重启Prometheus服务：</h4><p>重启<code>Prometheus</code>，再次打开访问：<code>http://localhost:9090/targets</code>，才能看到如下图：</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Prometheus_restart.png" alt="img"></p>
 </li>
-<li><h4 id="导入模板："><a href="#导入模板：" class="headerlink" title="导入模板："></a>导入模板：</h4><p><a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/10467">模板下载戳这里</a>，也可以记住<code>ID</code>在后面直接引用。</p>
-<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_view.png" alt="img"></p>
+<li><h4 id="导入模板："><a href="#导入模板：" class="headerlink" title="导入模板："></a>导入模板：</h4><p><a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/7362">模板下载戳这里</a>，也可以记住<code>ID</code>在后面直接引用。</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_Dashboard_mysql.png" alt="img"></p>
 </li>
 <li><h4 id="验证访问：-2"><a href="#验证访问：-2" class="headerlink" title="验证访问："></a>验证访问：</h4><p>访问：<code>http://192.168.9.128:3000</code>，这里的<code>IP</code>替换为服务器<code>IP</code>。</p>
 <p>默认账号名&#x2F;密码：<code>admin/admin</code>。（首次登录会修改密码）</p>
@@ -338,6 +338,40 @@
 <p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_save_source.png" alt="img"></p>
 </li>
 <li><h4 id="导入DashBoard："><a href="#导入DashBoard：" class="headerlink" title="导入DashBoard："></a>导入<code>DashBoard</code>：</h4><p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_DashBoard.png" alt="img"></p>
+<p>输入<code>ID：7362</code>，点击<code>“Load”</code>。（这里以导入这个模板为例）</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_Dashboard_mysql_load.png" alt="img"></p>
+<p>选择<code>data source</code>，下拉选择上一步配置的数据源，点击<code>“Import”</code>：</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_DashBoard_import.png" alt="img"></p>
+</li>
+<li><h4 id="展示效果："><a href="#展示效果：" class="headerlink" title="展示效果："></a>展示效果：</h4><p><img src="/../image/mysql_exportor_Prometheus_Grafana/mysql_exportor_Prometheus_Grafana_view.png" alt="img"></p>
+</li>
+</ul>
+</li>
+<li><h3 id="grafana监控windows-exporter："><a href="#grafana监控windows-exporter：" class="headerlink" title="grafana监控windows_exporter："></a><code>grafana</code>监控<code>windows_exporter</code>：</h3><ul>
+<li><h4 id="运行windows-exporter的msi文件："><a href="#运行windows-exporter的msi文件：" class="headerlink" title="运行windows_exporter的msi文件："></a>运行<code>windows_exporter</code>的<code>msi</code>文件：</h4><p><a target="_blank" rel="noopener" href="https://github.com/prometheus-community/windows_exporter/releases"><code>windows_exporter.msi</code> 下载戳这里</a>。</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/mysql_exportor_msi.png" alt="img"></p>
+<p>下载完成后直接运行，访问地址：<code>http://localhost:9182/metrics</code>，就可以看到采集的数据了：</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/mysql_exportor_metrics.png" alt="img"></p>
+</li>
+<li><h3 id="windows-exporter添加到prometheus："><a href="#windows-exporter添加到prometheus：" class="headerlink" title="windows_exporter添加到prometheus："></a><code>windows_exporter</code>添加到<code>prometheus</code>：</h3><p>修改<code>prometheus.yml</code>文件：</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Prometheus_reini.png" alt="img"></p>
+<p>出现如下图就代表成功了：</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Prometheus_reup.png" alt="img"></p>
+</li>
+<li><h4 id="导入模板：-1"><a href="#导入模板：-1" class="headerlink" title="导入模板："></a>导入模板：</h4><p><a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/10467">模板下载戳这里</a>，也可以记住<code>ID</code>在后面直接引用。</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_view.png" alt="img"></p>
+</li>
+<li><h4 id="验证访问：-3"><a href="#验证访问：-3" class="headerlink" title="验证访问："></a>验证访问：</h4><p>访问：<code>http://192.168.9.128:3000</code>，这里的<code>IP</code>替换为服务器<code>IP</code>。</p>
+<p>默认账号名&#x2F;密码：<code>admin/admin</code>。（首次登录会修改密码）</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_login.png" alt="img"></p>
+</li>
+<li><h4 id="添加数据源：-1"><a href="#添加数据源：-1" class="headerlink" title="添加数据源："></a>添加数据源：</h4><p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_add_source.png" alt="img"></p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_choice_source.png" alt="img"></p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_edit_source.png" alt="img"></p>
+<p>点击<code>“Save&amp;test”</code>，出现<code>“Data source is working”</code>，代表数据源配置成功。</p>
+<p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_save_source.png" alt="img"></p>
+</li>
+<li><h4 id="导入DashBoard：-1"><a href="#导入DashBoard：-1" class="headerlink" title="导入DashBoard："></a>导入<code>DashBoard</code>：</h4><p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_DashBoard.png" alt="img"></p>
 <p>输入<code>ID：10467</code>，点击<code>“Load”</code>。（这里以导入这个模板为例）</p>
 <p><img src="/../image/mysql_exportor_Prometheus_Grafana/Grafana_DashBoard_load.png" alt="img"></p>
 <p>选择<code>data source</code>，下拉选择上一步配置的数据源，点击<code>“Import”</code>：</p>
@@ -659,7 +693,7 @@
                 
                   <img src="/img/favicon.ico">
                 
-                技术笔记
+                Autumn
               </a>
             </li>
           
