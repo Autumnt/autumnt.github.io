@@ -222,6 +222,11 @@
 
   
   
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2016/12/06/php-curl/" class="archive-article-date">
         <time datetime="2016-12-06T02:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
 </a>
@@ -355,6 +360,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%81%E8%AE%BF%E9%97%AE%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">要访问的网页地址：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8F%82%E6%95%B0%E4%B8%AD%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%9C%89%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%E3%80%81%E4%B8%AD%E6%96%87%E7%AD%89%EF%BC%8C%E9%9C%80%E8%A6%81%E5%AF%B9%E5%85%B6%E8%BF%9B%E8%A1%8C%E7%BC%96%E7%A0%81%EF%BC%8C%E7%BC%96%E7%A0%81%E7%9A%84%E6%93%8D%E4%BD%9C%E5%9C%A8getCurl-%E4%B8%AD%E5%B7%B2%E7%BB%8F%E6%89%A7%E8%A1%8C%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">请求的参数中可能会有特殊符号、中文等，需要对其进行编码，编码的操作在getCurl 中已经执行：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E7%94%A8getCurl%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">调用getCurl方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Curl-%E6%89%A7%E8%A1%8C-GET-%E8%AF%B7%E6%B1%82%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">使用 Curl 执行 GET 请求：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-number">5.</span> <span class="toc-text">效果展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E5%A0%82%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">6.</span> <span class="toc-text">课堂小知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CURLOPT-URL-%E8%BF%99%E6%98%AF%E4%BD%A0%E6%83%B3%E7%94%A8PHP%E5%8F%96%E5%9B%9E%E7%9A%84URL%E5%9C%B0%E5%9D%80%E3%80%82%E4%BD%A0%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%9C%A8%E7%94%A8curl-init-%E5%87%BD%E6%95%B0%E5%88%9D%E5%A7%8B%E5%8C%96%E6%97%B6%E8%AE%BE%E7%BD%AE%E8%BF%99%E4%B8%AA%E9%80%89%E9%A1%B9%E3%80%82"><span class="toc-number">6.1.</span> <span class="toc-text">CURLOPT_URL: 这是你想用PHP取回的URL地址。你也可以在用curl_init()函数初始化时设置这个选项。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CURLOPT-USERAGENT-%E5%9C%A8HTTP%E8%AF%B7%E6%B1%82%E4%B8%AD%E5%8C%85%E5%90%AB%E4%B8%80%E4%B8%AA-39-user-agent-39-%E5%A4%B4%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%82"><span class="toc-number">6.2.</span> <span class="toc-text">CURLOPT_USERAGENT: 在HTTP请求中包含一个&#39;user-agent&#39;头的字符串。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CURLOPT-REFERER-%E5%9C%A8HTTP%E8%AF%B7%E6%B1%82%E4%B8%AD%E5%8C%85%E5%90%AB%E4%B8%80%E4%B8%AA-39-referer-39-%E5%A4%B4%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%82"><span class="toc-number">6.3.</span> <span class="toc-text">CURLOPT_REFERER: 在HTTP请求中包含一个&#39;referer&#39;头的字符串。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CURLOPT-REFERER-%E5%9C%A8HTTP%E8%AF%B7%E6%B1%82%E4%B8%AD%E4%B8%8D%E5%8C%85%E5%90%AB%E4%B8%80%E4%B8%AA-39-referer-39-%E5%A4%B4%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%82"><span class="toc-number">6.4.</span> <span class="toc-text">CURLOPT_REFERER: 在HTTP请求中不包含一个&#39;referer&#39;头的字符串。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CURLOPT-POST-%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%83%B3PHP%E5%8E%BB%E5%81%9A%E4%B8%80%E4%B8%AA%E6%AD%A3%E8%A7%84%E7%9A%84HTTP-POST%EF%BC%8C%E8%AE%BE%E7%BD%AE%E8%BF%99%E4%B8%AA%E9%80%89%E9%A1%B9%E4%B8%BA%E4%B8%80%E4%B8%AA%E9%9D%9E%E9%9B%B6%E5%80%BC%E3%80%82%E8%BF%99%E4%B8%AAPOST%E6%98%AF%E6%99%AE%E9%80%9A%E7%9A%84-application-x-www-from-urlencoded-%E7%B1%BB%E5%9E%8B%EF%BC%8C%E5%A4%9A%E6%95%B0%E8%A2%ABHTML%E8%A1%A8%E5%8D%95%E4%BD%BF%E7%94%A8%E3%80%82"><span class="toc-number">6.5.</span> <span class="toc-text">CURLOPT_POST: 如果你想PHP去做一个正规的HTTP POST，设置这个选项为一个非零值。这个POST是普通的 application&#x2F;x-www-from-urlencoded 类型，多数被HTML表单使用。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CURLOPT-POSTFIELDS-%E4%BC%A0%E9%80%92%E4%B8%80%E4%B8%AA%E4%BD%9C%E4%B8%BAHTTP-39-POST-39-%E6%93%8D%E4%BD%9C%E7%9A%84%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%82"><span class="toc-number">6.6.</span> <span class="toc-text">CURLOPT_POSTFIELDS: 传递一个作为HTTP &#39;POST&#39;操作的所有数据的字符串。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CURLOPT-COOKIE-%E4%BC%A0%E9%80%92%E4%B8%80%E4%B8%AA%E5%8C%85%E5%90%ABHTTP-cookie%E7%9A%84%E5%A4%B4%E8%BF%9E%E6%8E%A5%E3%80%82"><span class="toc-number">6.7.</span> <span class="toc-text">CURLOPT_COOKIE: 传递一个包含HTTP cookie的头连接。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CURLOPT-COOKIEFILE-%E4%BC%A0%E9%80%92%E4%B8%80%E4%B8%AA%E5%8C%85%E5%90%ABcookie%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%87%E4%BB%B6%E7%9A%84%E5%90%8D%E5%AD%97%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%82%E8%BF%99%E4%B8%AAcookie%E6%96%87%E4%BB%B6%E5%8F%AF%E4%BB%A5%E6%98%AFNetscape%E6%A0%BC%E5%BC%8F%EF%BC%8C%E6%88%96%E6%98%AF%E5%A0%86%E5%AD%98%E5%9C%A8%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84HTTP%E9%A3%8E%E6%A0%BC%E7%9A%84%E5%A4%B4%E3%80%82"><span class="toc-number">6.8.</span> <span class="toc-text">CURLOPT_COOKIEFILE: 传递一个包含cookie数据的文件的名字的字符串。这个cookie文件可以是Netscape格式，或是堆存在文件中的HTTP风格的头。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CURLOPT-FOLLOWLOCATION-%E8%AE%BE%E7%BD%AE%E8%BF%99%E4%B8%AA%E9%80%89%E9%A1%B9%E4%B8%BA%E4%B8%80%E4%B8%AA%E9%9D%9E%E9%9B%B6%E5%80%BC-%E8%B1%A1-39-Location-39-%E7%9A%84%E5%A4%B4%EF%BC%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%9A%E6%8A%8A%E5%AE%83%E5%BD%93%E5%81%9AHTTP%E5%A4%B4%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86%E5%8F%91%E9%80%81-%E6%B3%A8%E6%84%8F%E8%BF%99%E6%98%AF%E9%80%92%E5%BD%92%E7%9A%84%EF%BC%8CPHP%E5%B0%86%E5%8F%91%E9%80%81%E5%BD%A2%E5%A6%82-39-Location-39-%E7%9A%84%E5%A4%B4-%E3%80%82"><span class="toc-number">6.9.</span> <span class="toc-text">CURLOPT_FOLLOWLOCATION: 设置这个选项为一个非零值(象&#39;Location:&#39;)的头，服务器会把它当做HTTP头的一部分发送(注意这是递归的，PHP将发送形如&#39;Location: &#39;的头)。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CURLOPT-TIMEOUT-%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E9%95%BF%E6%95%B4%E5%BD%A2%E6%95%B0%EF%BC%8C%E4%BD%9C%E4%B8%BA%E6%9C%80%E5%A4%A7%E5%BB%B6%E7%BB%AD%E5%A4%9A%E5%B0%91%E7%A7%92%E3%80%82"><span class="toc-number">6.10.</span> <span class="toc-text">CURLOPT_TIMEOUT: 设置一个长整形数，作为最大延续多少秒。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CURLOPT-HEADER-%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%83%B3%E6%8A%8A%E4%B8%80%E4%B8%AA%E5%A4%B4%E5%8C%85%E5%90%AB%E5%9C%A8%E8%BE%93%E5%87%BA%E4%B8%AD%EF%BC%8C%E8%AE%BE%E7%BD%AE%E8%BF%99%E4%B8%AA%E9%80%89%E9%A1%B9%E4%B8%BA%E4%B8%80%E4%B8%AA%E9%9D%9E%E9%9B%B6%E5%80%BC%E3%80%82"><span class="toc-number">6.11.</span> <span class="toc-text">CURLOPT_HEADER: 如果你想把一个头包含在输出中，设置这个选项为一个非零值。</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -389,6 +407,18 @@
   </div>
   
   
+	<script src="/lib/busuanzi.pure.js"></script>
+	
+  
+  
+	
+	<span id="busuanzi_container_site_pv" style="display:none">
+		本站总访问量<span id="busuanzi_value_site_pv"></span>次	
+	        <span class="post-meta-divider" >|</span>
+	</span>
+  	<span id="busuanzi_container_site_uv" style='display:none'>
+  		本站访客数<span id="busuanzi_value_site_uv"></span>人
+  	</span>
   
 </footer>
 
@@ -402,7 +432,7 @@
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
 		showTags: true
@@ -500,7 +530,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">MYSQL_EXPORTOR</a>
+                <a href="javascript:void(0)" class="js-tag color4">NODE_EXPORTER</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,7 +538,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NODE_EXPORTER</a>
+                <a href="javascript:void(0)" class="js-tag color5">MYSQL_EXPORTOR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,11 +550,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">

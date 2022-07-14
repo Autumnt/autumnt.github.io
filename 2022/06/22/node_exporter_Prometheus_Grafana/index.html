@@ -39,8 +39,8 @@
 <meta property="article:author" content="Autumn">
 <meta property="article:tag" content="GRAFANA">
 <meta property="article:tag" content="LINUX">
-<meta property="article:tag" content="PROMETHEUS">
 <meta property="article:tag" content="NODE_EXPORTER">
+<meta property="article:tag" content="PROMETHEUS">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://autumnt.github.io/image/node_exporter_Prometheus_Grafana/node_exporter_Prometheus_Grafana.png">
   
@@ -240,6 +240,11 @@
 
   
   
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2022/06/22/node_exporter_Prometheus_Grafana/" class="archive-article-date">
         <time datetime="2022-06-22T09:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-22</time>
 </a>
@@ -351,11 +356,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PROMETHEUS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">NODE_EXPORTER</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">NODE_EXPORTER</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PROMETHEUS</a>
         		</li>
       		
 		</ul>
@@ -405,6 +410,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2node-exporter%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">部署node_exporter：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">下载部署命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8node-exporter%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">启动node_exporter命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E8%AE%BF%E9%97%AE%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">验证访问：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2Prometheus%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">部署Prometheus：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4%EF%BC%9A-1"><span class="toc-number">2.1.</span> <span class="toc-text">下载部署命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">修改配置文件：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8prometheus%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">2.3.</span> <span class="toc-text">启动prometheus命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E8%AE%BF%E9%97%AE%EF%BC%9A-1"><span class="toc-number">2.4.</span> <span class="toc-text">验证访问：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%9A-1"><span class="toc-number">2.5.</span> <span class="toc-text">修改配置文件：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E5%90%8E%E9%AA%8C%E8%AF%81%E8%AE%BF%E9%97%AE%EF%BC%9A"><span class="toc-number">2.6.</span> <span class="toc-text">重启后验证访问：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2grafana%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">部署grafana：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4%EF%BC%9A-2"><span class="toc-number">3.1.</span> <span class="toc-text">下载部署命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">配置文件：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%EF%BC%9A"><span class="toc-number">3.3.</span> <span class="toc-text">开机自启动：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E8%AE%BF%E9%97%AE%EF%BC%9A-2"><span class="toc-number">3.4.</span> <span class="toc-text">验证访问：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE%E6%BA%90%EF%BC%9A"><span class="toc-number">3.5.</span> <span class="toc-text">添加数据源：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5Dashboard%EF%BC%9A"><span class="toc-number">3.6.</span> <span class="toc-text">导入Dashboard：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%95%E7%A4%BA%E6%95%88%E6%9E%9C%E5%9B%BE%EF%BC%9A"><span class="toc-number">3.7.</span> <span class="toc-text">展示效果图：</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -439,6 +457,18 @@
   </div>
   
   
+	<script src="/lib/busuanzi.pure.js"></script>
+	
+  
+  
+	
+	<span id="busuanzi_container_site_pv" style="display:none">
+		本站总访问量<span id="busuanzi_value_site_pv"></span>次	
+	        <span class="post-meta-divider" >|</span>
+	</span>
+  	<span id="busuanzi_container_site_uv" style='display:none'>
+  		本站访客数<span id="busuanzi_value_site_uv"></span>人
+  	</span>
   
 </footer>
 
@@ -452,7 +482,7 @@
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
 		showTags: true
@@ -550,7 +580,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">MYSQL_EXPORTOR</a>
+                <a href="javascript:void(0)" class="js-tag color4">NODE_EXPORTER</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,7 +588,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NODE_EXPORTER</a>
+                <a href="javascript:void(0)" class="js-tag color5">MYSQL_EXPORTOR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,11 +600,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">AJAX</a>
               </li>
              
               <li class="article-tag-list-item">
